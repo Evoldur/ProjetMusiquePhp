@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+</head>
+
+    <script src="../ScriptJs/mediatorInputFilter.js"></script>
+    <script src="../ScriptJs/moduleMetierMusique.js"></script>
+    <script src="../ScriptJs/fabriqueMusique.js"></script>
+    <script src="../ScriptJs/formsGuiPrototype.js"></script>
+    <script src="../ScriptJs/interfaceImplementation.js"></script>
+    <script src="../ScriptJs/modelModule.js"></script>
+    <script src="../ScriptJs/mediator.js"></script>
+    <script src="../ScriptJs/guiBoutonSupprimerMusique.js"></script>
+    <script src="../ScriptJs/guiBoutonModifierMusique.js"></script>
+
+    <script src="../ScriptJs/guiBoutonAjouterMusique.js"></script>
+    <script src="../ScriptJs/guiModifierMusiqueFormValidate.js"></script>
+    <script src="../ScriptJs/guiAjouterMusiqueFormValidate.js"></script>
+    <script src="../ScriptJs/guiMusiqueChanged2.js"></script>
+    <script src="../ScriptJs/guiDetailsChanged.js"></script>
+
+
+
+
+    <button id="boutonAjoutMusique">Ajoutez une musique</button></br>
+    <span id="listeMusique" class="panel"></span>
+    <span class="panel">
+        <span id="vueDetail">
+        </span></br></br>
+    </span>
+    <span id="spanMainForm" class="panel">
+        <form id="ajouterMusiqueForm" method="post"></form>
+        <form id="modifierMusiqueForm" method="post"></form>
+
+    </span>
+
+    <script src="../ScriptJs/jquery.js"></script>
+    <script src="../ScriptJs/guiJQueryEventsMusique.js"></script>
+
+    <script>
+        myApp.addModule("mainFunction", function(){
+            myApp.modele.selectedMusique = myApp.modele.musiques[0];
+            myApp.gui.mediator.publish("musique/changed", {
+                personne : myApp.modele.selectedMusique
+            });
+            myApp.gui.initJQuerryEventsMusique();
+
+        });
+        myApp.mainFunction();
+
+    </script>
+</body>
+</html>
